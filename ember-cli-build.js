@@ -13,15 +13,14 @@ AddExtension.prototype = Object.create(Filter.prototype);
 
 AddExtension.prototype.processString = function(existingString, fileName) {
   let d = new Date();
-  debugger;
   return `/**
            * ${fileName}
            * 
            * (c) ${d.getFullYear()} 🦄🦄🦄🔫🌈🍺🍺 All Rights Reserved 
            * generated at: ${d.toISOString()}
-           * /
+           */
            ${existingString}
-           * `;
+           `;
 };
 
 AddExtension.prototype.extensions = ['css', 'js'];

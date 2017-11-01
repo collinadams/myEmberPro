@@ -2,6 +2,29 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const Filter = require('broccoli-filter');
+const debugTree = require('broccoli-stew').debug;
+
+function AddExtension(inputNode) {
+  Filter.call(this, inputNode);
+}
+
+AddExtension.prototype = Object.create(Filter.prototype);
+
+AddExtension.prototype.processString = function(existingString, fileName) {
+  let d = new Date();
+  debugger;
+  return `/**
+           * ${fileName}
+           * 
+           * (c) ${d.getFullYear()} 🦄🦄🦄🔫🌈🍺🍺 All Rights Reserved 
+           * generated at: ${d.toISOString()}
+           * /
+           ${existingString}
+           * `;
+};
+
+AddExtension.prototype.extensions = ['css', 'js'];
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
@@ -23,5 +46,5 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  return new AddExtension(app.toTree());
 };

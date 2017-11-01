@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { default as math, PI } from 'math'
+import { default as math, PI } from 'math';
 
 const { Controller, inject } = Ember;
 
@@ -8,5 +8,10 @@ export default Controller.extend({
   mathLib: {
     four: math.sqrt(16),
     PI
+  },
+  init() {
+    this._super(...arguments);
+    let geo = Ember.getOwner(this).lookup('data:location');
+    this.set('geo', geo);
   }
 });

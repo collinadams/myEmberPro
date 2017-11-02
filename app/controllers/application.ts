@@ -11,7 +11,10 @@ export default Controller.extend({
   },
   init() {
     this._super(...arguments);
-    let geo = Ember.getOwner(this).lookup('data:location');
+    let owner = Ember.getOwner(this);
+    let geo = owner.lookup('data:location');
     this.set('geo', geo);
+    let req = owner.lookup('data:request');
+    this.set('req', req);
   }
 });

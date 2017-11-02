@@ -4,8 +4,17 @@
       <input
         class='posts-search-field'
         type='search'
+        value={{search}}
+        oninput={{
+          action 
+          'searchUpdated'
+          value='target.value'
+        }}
         placeholder='🔎 Search'/>
     </div>
+      <div>
+        {{searchParam}}
+      </div>
     <div class="posts-left-content">
       <div class="posts-left-content-pane">
       {{#each model as |post|}}

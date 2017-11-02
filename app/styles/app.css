@@ -353,3 +353,7 @@ nav.navbar .brand {
 hr {
     border-bottom: none;
 }
+
+input[type='search'] {
+    color: black;
+}

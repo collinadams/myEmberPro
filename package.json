@@ -68,7 +68,8 @@
   "private": true,
   "ember-addon": {
     "paths": [
-      "lib/core-ui"
+      "lib/core-ui",
+      "lib/stamp"
     ]
   }
 }

@@ -6,5 +6,10 @@
   },
   "keywords": [
     "ember-addon"
-  ]
+  ],
+  "ember-addon": {
+    "paths": [
+      "lib/stamp"
+    ]
+  }
 }

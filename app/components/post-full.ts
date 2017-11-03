@@ -13,8 +13,14 @@ export default Component.extend({
   postInfo: stateFor('post-info', 'model'),
 
   actions: {
-    submitForm() {
-      this.get('comment').setProperties(this.get('data'));
+    deleteComment(comment) {
+      comment.deleteRecord();
+    },
+    saveComment() {
+      let f = this['save-comment'];
+      if (f && typeof f === 'function') {
+        f(this.get('postInfo.draftComment'), this.get('model'));
+      }
     }
   }
 });

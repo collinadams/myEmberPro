@@ -14,8 +14,8 @@ export default JSONAPIAdapter.extend(DataAdapterMixin, {
     switch(modelName) {
       case 'comment':
         let postId = snapshot.belongsTo('post').id;
-        let postUrl = this.urlForFindRecord(postId, 'post', snapshot(belongsTo('post')));
-        return `${postURl}/comment/${id}`;
+        let postUrl = this.urlForFindRecord(postId, 'post', snapshot.belongsTo('post'));
+        return `${postUrl}/comment/${id}`;
       default: 
         return this._super(...arguments);
     }
@@ -24,8 +24,8 @@ export default JSONAPIAdapter.extend(DataAdapterMixin, {
     switch(modelName) {
       case 'comment':
         let postId = snapshot.belongsTo('post').id;
-        let postUrl = this.urlForFindRecord(postId, 'post', snapshot(belongsTo('post')));
-        return `${postURl}/comments`;
+        let postUrl = this.urlForFindRecord(postId, 'post', snapshot.belongsTo('post'));
+        return `${postUrl}/comments`;
       default: 
         return this._super(...arguments);
     }

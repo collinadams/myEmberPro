@@ -5,10 +5,12 @@ const { Component } = Ember;
 
 export default Component.extend({
   classNames: ['post-full'],
+
+  draftComment: '',
   
   tagName: 'form',
   
-  data: stateFor('draft-name', 'comment'),
+  postInfo: stateFor('post-info', 'model'),
 
   actions: {
     submitForm() {

@@ -2,17 +2,17 @@
 
 export function initialize(app) {
   if (typeof FastBoot === 'undefined') {
-    app.deferReadiness();
+    // app.deferReadiness();
 
-    const { geolocation } = navigator;
-    geolocation.getCurrentPosition((pos) => {
-      let { coords: { latitude: lat, longitude: lng } } = pos;
-      console.log('lat and lng = ', lat, lng);
-      app.register('data:location', { lat, lng }, {
-        instantiate: false,
-      });
-      app.advanceReadiness();
-    });
+    // const { geolocation } = navigator;
+    // geolocation.getCurrentPosition((pos) => {
+    //   let { coords: { latitude: lat, longitude: lng } } = pos;
+    //   console.log('lat and lng = ', lat, lng);
+    //   app.register('data:location', { lat, lng }, {
+    //     instantiate: false,
+    //   });
+    //   app.advanceReadiness();
+    // });
   }
 }
 
